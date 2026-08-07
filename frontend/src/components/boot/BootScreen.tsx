@@ -23,7 +23,7 @@ export default function BootScreen({ onComplete }){
         return () =>clearInterval(interval);
     },[onComplete])
     return (
-        <section className="min-h-screen flex flex-col items-center justify-center bg-black">
+        <section className="fixed inset-0 z-[9999]  flex flex-col items-center justify-center bg-black">
             <h1 className="text-5xl font-bold text-white">
                 AURA OS
             </h1>

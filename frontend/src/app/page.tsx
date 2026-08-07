@@ -3,6 +3,7 @@
 
 import BootScreen from "@/components/boot/BootScreen";
 import Hero from "@/components/hero/Hero";
+import About from "@/components/about/About";
 import { useState } from "react";
 export default function Home() {
 
@@ -16,13 +17,13 @@ export default function Home() {
   }
 
   return (
-   
-    
-      <main className="min-h-screen bg-black text-white flex items-center justify-center">
+    <>
+     <main className="min-h-screen  pt-20 text-white r">
         <h1 className="text-5xl font-bold"></h1>
         <Hero />
-        
       </main>
+       <About />
+    </>
     
     
   );
