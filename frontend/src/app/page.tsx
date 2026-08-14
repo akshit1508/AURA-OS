@@ -1,9 +1,11 @@
 "use client";
 
+import Contact from "@/components/contact/Contact";
 import BootScreen from "@/components/boot/BootScreen";
 import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
 import { useEffect, useState } from "react";
+import Skills from "@/components/skills/Skills";
 
 export default function Home() {
   const [bootStatus, setBootStatus] = useState(null);
@@ -41,6 +43,8 @@ export default function Home() {
       </main>
 
       <About />
+      <Skills />
+      <Contact />
     </>
   );
 }

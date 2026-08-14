@@ -4,6 +4,7 @@ const SKILL_MODULES = [
     number: "01",
     title: "Core Engineering",
     shortTitle: "Core",
+    status: "FOUNDATIONAL",
     description:
       "The foundations I use to design logic, solve problems, and build reliable software systems.",
 
@@ -26,12 +27,12 @@ const SKILL_MODULES = [
       {
         name: "OOP",
         level: "Strong",
-        icon: "/icons/skills/oop.svg",
+        icon: "/icons/skills/oop.wepb",
       },
       {
         name: "Data Structures & Algorithms",
         level: "Strong",
-        icon: "/icons/skills/dsa.svg",
+        icon: "/icons/skills/dsa.jpg",
       },
     ],
   },
@@ -41,6 +42,7 @@ const SKILL_MODULES = [
     number: "02",
     title: "Backend Systems",
     shortTitle: "Backend",
+    status: "ACTIVE",
     description:
       "Building APIs, server-side systems, database integrations, and scalable backend architecture.",
 
@@ -48,7 +50,7 @@ const SKILL_MODULES = [
       {
         name: "Spring",
         level: "Strong",
-        icon: "/icons/skills/spring.svg",
+        icon: "/icons/skills/spring.png",
       },
       {
         name: "Spring Boot",
@@ -88,6 +90,7 @@ const SKILL_MODULES = [
     number: "03",
     title: "Frontend Engineering",
     shortTitle: "Frontend",
+    status: "ACTIVE",
     description:
       "Creating responsive interfaces, component-driven applications, and interactive user experiences.",
 
@@ -130,6 +133,7 @@ const SKILL_MODULES = [
     number: "04",
     title: "AI / Data",
     shortTitle: "AI / Data",
+    status: "EVOLVING",
     description:
       "Working with data, machine learning concepts, numerical computing, and analytical workflows.",
 
@@ -162,6 +166,7 @@ const SKILL_MODULES = [
     number: "05",
     title: "AI Tools",
     shortTitle: "AI Tools",
+    status: "ACTIVE",
     description:
       "AI-powered tools I use for research, productivity, experimentation, and development workflows.",
 
@@ -189,6 +194,7 @@ const SKILL_MODULES = [
     number: "06",
     title: "Engineering Toolchain",
     shortTitle: "Toolchain",
+    status: "ACTIVE",
     description:
       "The tools I use to develop, test, version, package, and manage software systems.",
 
