@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import LOADING_STEPS from "@/constants/loading"
 
-export default function BootScreen({ onComplete }){
+export default function BootScreen({ onComplete }: { onComplete: () => void }){
     const [currentStep, setCurrentStep] = useState(0);
 
     useEffect(()=>{

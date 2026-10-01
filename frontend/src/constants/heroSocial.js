@@ -7,12 +7,12 @@ const HERO_SOCIALS = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/YOUR-LINKEDIN",
+    href: "https://linkedin.com/in/akshit-bhandari-dev",
     icon: "/icons/icons8-linkedin-24.png",
   },
   {
     name: "Email",
-    href: "mailto:YOURMAIL@gmail.com",
+    href: "mailto:bhandariakshit137@gmail.com",
     icon: "/icons/icons8-gmail-48.png",
   },
 ];

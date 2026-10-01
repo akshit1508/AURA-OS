@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import AuraAssistant from "@/components/aura/AuraAssistant";
+import { AuraContextProvider } from "@/context/AuraContext";
 
 export const metadata: Metadata = {
   title: "AURA OS",
@@ -15,9 +17,11 @@ export default function RootLayer({
   return (
     <html lang="en">
       <body>
-
-        <Navbar />
-        {children}
+        <AuraContextProvider>
+          <Navbar />
+          {children}
+          <AuraAssistant />
+        </AuraContextProvider>
       </body>
     </html>
   );

@@ -4,20 +4,21 @@ import Contact from "@/components/contact/Contact";
 import BootScreen from "@/components/boot/BootScreen";
 import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
+import Projects from "@/components/projects/Projects";
+import AILab from "@/components/ai/AILab";
 import { useEffect, useState } from "react";
 import Skills from "@/components/skills/Skills";
 
 export default function Home() {
-  const [bootStatus, setBootStatus] = useState(null);
+  const [bootStatus, setBootStatus] = useState<string | null>(null);
 
   useEffect(() => {
     const hasBooted = sessionStorage.getItem("auraBooted");
-
-    if (hasBooted === "true") {
-      setBootStatus("completed");
-    } else {
-      setBootStatus("required");
-    }
+    const status = hasBooted === "true" ? "completed" : "required";
+    const timer = setTimeout(() => {
+      setBootStatus(status);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   function handleBootComplete() {
@@ -43,7 +44,9 @@ export default function Home() {
       </main>
 
       <About />
+      <Projects />
       <Skills />
+      <AILab />
       <Contact />
     </>
   );

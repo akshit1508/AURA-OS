@@ -1,0 +1,32 @@
+package com.example.portfolio_backend.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.portfolio_backend.dto.ContactRequest;
+import com.example.portfolio_backend.entity.Contact;
+import com.example.portfolio_backend.service.ContactService;
+
+@RestController
+@RequestMapping("/api/contact")
+public class ContactController {
+    private final ContactService contactService;
+
+    public ContactController(ContactService contactService){
+        this.contactService = contactService;
+    }
+
+    @PostMapping
+    public Contact createContact(@RequestBody ContactRequest request){
+        Contact contact = new Contact();
+
+        contact.setName(request.getName());
+        contact.setEmail(request.getEmail());
+        contact.setSubject(request.getSubject());
+        contact.setMessage(request.getMessage());
+
+        return contactService.saveContact(contact);
+    }
+}
