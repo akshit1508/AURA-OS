@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full px-6 py-24 text-white"
+      className="relative w-full px-4 sm:px-6 py-16 sm:py-24 text-white"
     >
       <div className="mx-auto max-w-7xl">
 
@@ -23,7 +23,7 @@ export default function Contact() {
             AURA / COMMUNICATION
           </p>
 
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
             Let&apos;s build something intelligent.
           </h2>
 
@@ -39,7 +39,7 @@ export default function Contact() {
 
         <div
           className="
-            mt-14
+            mt-10 sm:mt-14
             grid
             grid-cols-1
             gap-4
@@ -47,7 +47,7 @@ export default function Contact() {
             border
             border-white/10
             bg-white/[0.02]
-            p-4
+            p-3 sm:p-4
             backdrop-blur-xl
             lg:grid-cols-[0.8fr_1.2fr]
           "
@@ -61,7 +61,8 @@ export default function Contact() {
               border
               border-white/10
               bg-black/20
-              p-7
+              p-5
+              sm:p-7
               md:p-9
             "
           >

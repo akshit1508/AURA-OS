@@ -1,11 +1,22 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const NODE_COUNT = 14;
 
-export default function NeuralField({ aiState }) {
+const NODES = Array.from({ length: NODE_COUNT }, (_, index) => {
+  const angle = (index / NODE_COUNT) * Math.PI * 2;
+  const radius = 24 + ((index * 7) % 18);
+  return {
+    id: index,
+    x: 50 + Math.cos(angle) * radius,
+    y: 50 + Math.sin(angle) * radius * 0.72,
+    size: 2 + ((index * 3) % 1.5),
+    delay: (index * 0.5) % 3,
+  };
+});
 
+export default function NeuralField({ aiState }) {
   const fieldRef = useRef(null);
 
   const [pointer, setPointer] = useState({
@@ -14,54 +25,7 @@ export default function NeuralField({ aiState }) {
     active: false,
   });
 
-  const [nodes, setNodes] = useState([]);
-
-
-  /* ================================================= */
-  /* GENERATE NEURAL NODES */
-  /* ================================================= */
-
-  useEffect(() => {
-
-    const generatedNodes = Array.from(
-      { length: NODE_COUNT },
-      (_, index) => {
-
-        const angle =
-          (index / NODE_COUNT) * Math.PI * 2;
-
-        const radius =
-          24 + Math.random() * 18;
-
-        return {
-
-          id: index,
-
-          x:
-            50 +
-            Math.cos(angle) *
-              radius,
-
-          y:
-            50 +
-            Math.sin(angle) *
-              radius *
-              0.72,
-
-          size:
-            2 +
-            Math.random() * 1.5,
-
-          delay:
-            Math.random() * 3,
-        };
-
-      }
-    );
-
-    setNodes(generatedNodes);
-
-  }, []);
+  const nodes = NODES;
 
 
   /* ================================================= */

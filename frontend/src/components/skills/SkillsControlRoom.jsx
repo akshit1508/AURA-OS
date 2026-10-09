@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function SkillsControlRoom() {
 
-    const [activeModule, setActiveModule] = useState(null);
+    const [activeModule, setActiveModule] = useState(SKILL_MODULES[0]?.id || null);
     const selectedModule = SKILL_MODULES.find(
   (module) => module.id === activeModule
 );
@@ -31,7 +31,7 @@ export default function SkillsControlRoom() {
 
         {/* LEFT — SYSTEM MODULES */}
 
-       <div className="min-h-[460px] rounded-2xl border border-white/10 bg-black/20 p-5">
+       <div className="min-h-0 lg:min-h-[460px] rounded-2xl border border-white/10 bg-black/20 p-4 sm:p-5">
 
   <p className="text-[10px] uppercase tracking-[3px] text-blue-400">
     System Modules
@@ -50,7 +50,7 @@ export default function SkillsControlRoom() {
 
         {/* CENTER — AURA ENGINE */}
 
-       <div className="flex min-h-[460px] lg:min-h-[500px] items-center justify-center rounded-2xl border border-white/10 bg-black/20 p-5">
+       <div className="flex min-h-[360px] sm:min-h-[420px] lg:min-h-[500px] items-center justify-center rounded-2xl border border-white/10 bg-black/20 p-5">
 
   <div className="relative flex flex-col items-center text-center">
 
@@ -170,7 +170,7 @@ export default function SkillsControlRoom() {
 
         {/* RIGHT — LIVE MODULE */}
 
-        <div className="min-h-[420px] rounded-2xl border border-white/10 bg-black/20 p-5">
+        <div className="min-h-0 lg:min-h-[420px] rounded-2xl border border-white/10 bg-black/20 p-4 sm:p-5">
 
           <p className="text-[10px] uppercase tracking-[3px] text-blue-400">
           </p>

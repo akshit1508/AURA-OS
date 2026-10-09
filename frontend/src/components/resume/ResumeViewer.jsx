@@ -38,7 +38,7 @@ export default function ResumeViewer(){
     }
 
     return (
-        <main className="min-h-screen bg-[#030712] px-6 pb-20 pt-28 text-white">
+        <main className="min-h-screen bg-[#030712] px-3 sm:px-6 pb-20 pt-24 sm:pt-28 text-white">
 
       {/* Page Heading */}
 
@@ -144,7 +144,7 @@ export default function ResumeViewer(){
 
           {/* Viewer Controls */}
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
 
             <button
               onClick={zoomOut}
@@ -246,7 +246,7 @@ export default function ResumeViewer(){
 
         {/* PDF Area */}
 
-        <div className="overflow-auto rounded-b-3xl border-x border-b border-white/10 bg-[#11131c] p-6">
+        <div className="overflow-auto rounded-b-3xl border-x border-b border-white/10 bg-[#11131c] p-2 sm:p-6">
 
           <div className="flex justify-center">
 

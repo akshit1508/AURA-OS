@@ -14,7 +14,8 @@ export default function ArchitecturePanel({ project, onClose }) {
         border
         border-blue-400/30
         bg-[#040714]
-        p-6
+        p-4
+        sm:p-6
         shadow-[0_0_35px_rgba(59,130,246,0.08)]
         transition-all
         duration-300
@@ -24,7 +25,7 @@ export default function ArchitecturePanel({ project, onClose }) {
       <div className="flex items-center justify-between border-b border-white/10 pb-4">
         <div className="flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-          <h4 className="text-xs font-mono uppercase tracking-[3px] text-blue-300">
+          <h4 className="text-xs font-mono uppercase tracking-[2px] sm:tracking-[3px] text-blue-300">
             {project.title} {"//"} System Architecture Topology
           </h4>
         </div>
@@ -46,11 +47,11 @@ export default function ArchitecturePanel({ project, onClose }) {
               <span className="text-[9px] font-mono uppercase tracking-[2px] text-blue-400">
                 Tier 01 // Presentation Layer
               </span>
-              <span className="text-[9px] font-mono text-gray-500">React 19 / Next.js</span>
+              <span className="text-[9px] font-mono text-gray-500">Next.js / TypeScript</span>
             </div>
             <p className="mt-1 text-sm font-semibold text-white">Next.js Client Interface</p>
             <p className="mt-1 text-xs text-gray-400">
-              Interactive student dashboard, daily meal polling, complaint submission, and admin operations.
+              Interactive student dashboard, daily meal polling, complaint submission, and operational intelligence console.
             </p>
           </div>
 
@@ -71,21 +72,21 @@ export default function ArchitecturePanel({ project, onClose }) {
               <span className="text-[9px] font-mono uppercase tracking-[2px] text-blue-400">
                 Tier 02 // Application Core
               </span>
-              <span className="text-[9px] font-mono text-gray-500">Java / Spring Boot</span>
+              <span className="text-[9px] font-mono text-gray-500">Java 17 / Spring Boot 3.2.5</span>
             </div>
             <p className="mt-1 text-sm font-semibold text-white">Spring Boot Backend Gateway</p>
             <p className="mt-1 text-xs text-gray-400">
-              Layered Controller-Service-DAO architecture handling role-based auth, complaint resolution workflows, and polling aggregator.
+              Layered Controller-Service-DAO architecture handling Spring Security session-based auth & RBAC, complaint workflows, and AI request proxying.
             </p>
           </div>
 
           {/* Branching Connections */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Branch Left: Database */}
             <div className="flex flex-col items-center">
               <div className="h-4 w-px bg-blue-400/40" />
               <span className="text-[8px] font-mono tracking-widest text-blue-300/70">
-                JPA / Hibernate
+                Spring Data JPA
               </span>
               <div className="h-4 w-px bg-blue-400/40" />
 
@@ -122,12 +123,12 @@ export default function ArchitecturePanel({ project, onClose }) {
 
           {/* 3 AI Sub-Engines */}
           <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 pt-2">
-            <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center">
+            <div className="rounded-lg border border-cyan-400/30 bg-cyan-500/[0.04] p-3 text-center">
               <span className="text-[9px] font-mono font-bold uppercase tracking-[2px] text-cyan-300">
-                WHY?
+                WHY? (Active)
               </span>
               <p className="mt-1 text-xs font-medium text-white">Root Cause Investigation</p>
-              <p className="mt-1 text-[10px] text-gray-500">Analyzes dissatisfaction anomalies</p>
+              <p className="mt-1 text-[10px] text-gray-400">Analyzes dissatisfaction anomalies & serving patterns</p>
             </div>
 
             <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center">
@@ -135,7 +136,7 @@ export default function ArchitecturePanel({ project, onClose }) {
                 WHAT NEXT?
               </span>
               <p className="mt-1 text-xs font-medium text-white">Operational Forecasting</p>
-              <p className="mt-1 text-[10px] text-gray-500">Predicts meal turnout & demand</p>
+              <p className="mt-1 text-[10px] text-gray-500">Turnout & demand prediction from intervals</p>
             </div>
 
             <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center">
@@ -143,7 +144,7 @@ export default function ArchitecturePanel({ project, onClose }) {
                 WHAT IF?
               </span>
               <p className="mt-1 text-xs font-medium text-white">Policy Simulation</p>
-              <p className="mt-1 text-[10px] text-gray-500">Simulates menu/pricing scenarios</p>
+              <p className="mt-1 text-[10px] text-gray-500">P10/P50/P90 scenario modeling without live data mutation</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import AuraScene from "./AuraScene";
 import AuraChat from "./AuraChat";
@@ -17,6 +17,7 @@ export default function AuraAssistant() {
     setInput,
     handleSend,
     isLoading,
+    clearConversation,
   } = useAuraChat(projectContext);
 
   const handleHover = () => {
@@ -68,6 +69,7 @@ export default function AuraAssistant() {
           handleSend={handleSend}
           isLoading={isLoading}
           onClose={handleClose}
+          onClearConversation={clearConversation}
           projectContext={projectContext}
         />
       )}

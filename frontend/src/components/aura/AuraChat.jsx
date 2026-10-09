@@ -6,32 +6,30 @@ import ChatInput from "./ChatInput";
 export default function AuraChat({
   messages,
   onClose,
+  onClearConversation,
   input,
   setInput,
   handleSend,
   isLoading,
   projectContext,
 }) {
-  const isProjectMode =
-    projectContext && projectContext.contextMode === "project_deep_dive";
+  const isProjectMode = Boolean(projectContext && projectContext.projectId);
 
   return (
     <div
       className="
         fixed
-        right-5
-        top-5
-        bottom-5
+        inset-2 sm:inset-auto sm:right-5 sm:top-5 sm:bottom-5
         z-[100]
 
         flex
         flex-col
 
-        w-[min(440px,calc(100vw-40px))]
+        w-auto sm:w-[440px]
 
         overflow-hidden
 
-        rounded-[30px]
+        rounded-2xl sm:rounded-[30px]
 
         border
         border-cyan-300/20
@@ -49,7 +47,7 @@ export default function AuraChat({
       <div
         className="
           flex
-          h-[72px]
+          h-[60px] sm:h-[72px]
           shrink-0
           items-center
           justify-between
@@ -57,7 +55,7 @@ export default function AuraChat({
           border-b
           border-white/[0.08]
 
-          px-6
+          px-4 sm:px-6
         "
       >
         <div>
@@ -117,18 +115,54 @@ export default function AuraChat({
           )}
         </div>
 
-        <button
-          type="button"
-          onClick={onClose}
-          className="
-            text-xl
-            text-gray-400
-            transition
-            hover:text-cyan-300
-          "
-        >
-          ×
-        </button>
+        <div className="flex items-center gap-3">
+          {messages && messages.length > 1 && onClearConversation && (
+            <button
+              type="button"
+              onClick={onClearConversation}
+              title="Reset conversation"
+              aria-label="Reset conversation"
+              className="
+                flex
+                h-7
+                w-7
+                items-center
+                justify-center
+                rounded-md
+                border
+                border-white/10
+                bg-white/[0.04]
+                text-xs
+                font-mono
+                text-gray-400
+                transition
+                hover:border-cyan-400/40
+                hover:bg-cyan-500/10
+                hover:text-cyan-300
+              "
+            >
+              ↺
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={onClose}
+            className="
+              flex
+              h-7
+              w-7
+              items-center
+              justify-center
+              rounded-md
+              text-xl
+              text-gray-400
+              transition
+              hover:text-cyan-300
+            "
+          >
+            ×
+          </button>
+        </div>
       </div>
 
 
@@ -138,7 +172,7 @@ export default function AuraChat({
 
       <div
         className="
-          h-[220px]
+          h-[140px] sm:h-[220px]
           shrink-0
         "
       />

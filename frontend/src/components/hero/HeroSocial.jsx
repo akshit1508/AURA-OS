@@ -2,7 +2,7 @@ import HERO_SOCIALS from "@/constants/heroSocial";
 
 export default function HeroSocial() {
   return (
-    <div className="mt-10 flex items-center gap-6">
+    <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-6">
       {HERO_SOCIALS.map((social) => (
         <a
           key={social.name}

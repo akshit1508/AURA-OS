@@ -83,7 +83,8 @@ export default function ContactForm({ onSuccess }) {
         border
         border-white/10
         bg-black/20
-        p-7
+        p-5
+        sm:p-7
         md:p-9
       "
     >
@@ -170,7 +171,7 @@ export default function ContactForm({ onSuccess }) {
           <input
             type="email"
             placeholder="you@example.com"
-            vlaue={formData.email}
+            value={formData.email}
             onChange={(e)=>
                 setFormData({
                     ...formData,

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * AURA OS — Project Knowledge Registry
  *
  * Verified factual information for MESO and Medi Vault.
@@ -112,31 +112,31 @@ export const PROJECT_KNOWLEDGE = {
 
     architecture: {
       summary:
-        "MESO is a three-tier layered architecture: a Next.js frontend communicates with a Spring Boot backend gateway via REST APIs, which in turn serves both a MySQL relational database and a separate Python FastAPI AI microservice.",
+        "MESO is a three-tier layered architecture: a Next.js / TypeScript frontend communicates with a Spring Boot 3.2.5 backend gateway via REST APIs, which in turn coordinates with a MySQL relational database via Spring Data JPA and an internal Python FastAPI AI microservice.",
       tiers: [
         {
           tier: "Tier 01 — Presentation Layer",
-          tech: "Next.js / React",
+          tech: "Next.js / TypeScript",
           description:
-            "Interactive student dashboard, daily meal polling, complaint submission forms, and admin operations. Communicates with Spring Boot via REST APIs over HTTP/JSON.",
+            "Interactive student dashboard, daily meal polling, complaint submission forms, and administrative operational intelligence console. Communicates with Spring Boot via REST APIs over HTTP/JSON.",
         },
         {
           tier: "Tier 02 — Application Core",
-          tech: "Java / Spring Boot",
+          tech: "Java 17 / Spring Boot 3.2.5",
           description:
-            "Layered Controller-Service-DAO architecture handling role-based authentication, complaint resolution workflows, menu management, and polling aggregation. Acts as the main application gateway. Also proxies AI requests to the FastAPI service.",
+            "Layered Controller-Service-DAO architecture handling Spring Security session-based authentication & RBAC, complaint resolution workflows, menu management, and polling aggregation. Acts as the main application gateway and proxies AI requests to the FastAPI microservice.",
         },
         {
           tier: "Tier 02B — Intelligence Service",
           tech: "Python / FastAPI",
           description:
-            "Dedicated AI microservice hosting the three decision-support engines: WHY, WHAT NEXT, and WHAT IF. Python is used here because the statistical and numerical analysis work benefits from the Python data ecosystem. The browser never calls FastAPI directly.",
+            "Dedicated AI microservice hosting the three decision-support engines: WHY (active root-cause anomaly investigation), WHAT NEXT (turnout & rating forecasting), and WHAT IF (policy simulation). Python is used because statistical and numerical analysis benefits from the Python data ecosystem. The browser never calls FastAPI directly.",
         },
         {
           tier: "Tier 03 — Relational Persistence",
-          tech: "MySQL",
+          tech: "MySQL / Spring Data JPA",
           description:
-            "Stores student records, daily menus, meal ratings, poll votes, and complaint records. Accessed by Spring Boot via Hibernate/JPA.",
+            "Stores student records, daily menus, meal ratings, poll votes, and complaint records. Accessed by Spring Boot via Spring Data JPA and Hibernate.",
         },
       ],
     },
@@ -184,7 +184,18 @@ export const PROJECT_KNOWLEDGE = {
       },
     ],
 
-    technologies: ["Spring Boot", "Next.js", "FastAPI", "MySQL", "Python", "Java 21", "REST APIs", "Hibernate"],
+    technologies: [
+      "Spring Boot 3.2.5",
+      "Java 17",
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "MySQL",
+      "Spring Data JPA",
+      "Spring Security",
+      "Python",
+      "REST APIs",
+    ],
 
     suggestedQuestions: [
       "Explain the WHY engine",

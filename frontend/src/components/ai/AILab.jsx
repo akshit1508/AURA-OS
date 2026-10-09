@@ -2,17 +2,21 @@
 
 import { useState } from "react";
 import NeuralField from "./NeuralField";
+import { useAuraContext } from "@/context/AuraContext";
 
 export default function AILab() {
   const [message, setMessage] = useState("");
   const [aiState, setAiState] = useState("idle");
+  const { openGeneral, handleSend } = useAuraContext();
 
   const handleSubmit = () => {
     if (!message.trim()) return;
 
-    console.log("User message:", message);
-
-    setAiState("thinking");
+    const query = message.trim();
+    setMessage("");
+    setAiState("idle");
+    openGeneral();
+    handleSend(query);
   };
 
   return (

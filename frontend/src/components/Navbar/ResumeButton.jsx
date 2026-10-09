@@ -6,9 +6,12 @@ export default function ResumeButton(){
 border
 border-blue-500/30
 bg-white/5
-px-8
-py-2
-text-sm
+px-4
+py-1.5
+text-xs
+sm:px-7
+sm:py-2
+sm:text-sm
 font-medium
 text-white
 backdrop-blur-md

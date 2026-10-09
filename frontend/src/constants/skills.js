@@ -27,7 +27,7 @@ const SKILL_MODULES = [
       {
         name: "OOP",
         level: "Strong",
-        icon: "/icons/skills/oop.wepb",
+        icon: "/icons/skills/oops.webp",
       },
       {
         name: "Data Structures & Algorithms",

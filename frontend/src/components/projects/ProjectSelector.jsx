@@ -25,7 +25,7 @@ export default function ProjectSelector({
       </div>
 
       {/* Rail Container */}
-      <div className="relative space-y-2.5">
+      <div className="relative flex lg:block overflow-x-auto lg:overflow-visible gap-2.5 lg:gap-0 lg:space-y-2.5 pb-2 lg:pb-0 scrollbar-none snap-x">
         {projects.map((project) => {
           const isActive = project.id === activeProjectId;
           const isComingSoon = project.status === "COMING SOON";
@@ -46,11 +46,16 @@ export default function ProjectSelector({
               className={`
                 group
                 relative
-                w-full
+                w-[240px]
+                sm:w-[280px]
+                lg:w-full
+                shrink-0
+                snap-start
                 text-left
                 rounded-xl
                 border
-                p-4
+                p-3.5
+                sm:p-4
                 transition-all
                 duration-300
                 outline-none
@@ -99,7 +104,7 @@ export default function ProjectSelector({
                       }
                     `}
                   >
-                    // {project.number}
+                    {"// "}{project.number}
                   </span>
                 </div>
 

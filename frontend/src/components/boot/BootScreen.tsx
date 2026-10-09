@@ -32,7 +32,7 @@ export default function BootScreen({ onComplete }: { onComplete: () => void }){
 
             <p className="mt-2 text-blue-400 font-semibold">{LOADING_STEPS[currentStep].progress}%</p>
 
-            <div className="mt-8 h-2 w-80 rounded-full bg-gray-800 overflow-hidden">
+            <div className="mt-8 h-2 w-[min(320px,calc(100vw-48px))] rounded-full bg-gray-800 overflow-hidden">
                 <div className="h-full  rounded-full bg-blue-500 transition-all duration-100"
                 style={{width: `${LOADING_STEPS[currentStep].progress}%`}}
                 ></div>

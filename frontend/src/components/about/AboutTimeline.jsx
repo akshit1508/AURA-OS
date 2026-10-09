@@ -9,42 +9,42 @@ export default function AboutTimeline() {
   const currentMilestone = ABOUT_TIMELINE[activeIndex];
 
   return (
-    <section className="mt-32">
+    <section className="mt-20 sm:mt-32">
 
       {/* Heading */}
-      <div className="mb-20 text-center">
+      <div className="mb-12 sm:mb-20 text-center">
 
-        <p className="text-sm font-semibold uppercase tracking-[6px] text-blue-400">
+        <p className="text-xs sm:text-sm font-semibold uppercase tracking-[4px] sm:tracking-[6px] text-blue-400">
           System Evolution
         </p>
 
-        <h2 className="mt-4 text-5xl font-bold text-white">
+        <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
           Every Milestone Shaped My Journey
         </h2>
 
       </div>
 
       {/* Main Layout */}
-      <div className="grid gap-16 xl:grid-cols-[360px_1fr]">
+      <div className="grid gap-10 xl:gap-16 xl:grid-cols-[360px_1fr]">
 
         {/* ================= LEFT SIDE ================= */}
-<div className="space-y-2">
-
-          {/* Vertical Line */}
-
+        <div className="space-y-2">
 
           {ABOUT_TIMELINE.map((item, index) => (
 
             <div
-  key={item.year}
-  onMouseEnter={() => setActiveIndex(index)}
-  className={`
-    cursor-pointer
-    border-l-4
-    pl-6
-    py-6
-    transition-all
-    duration-300
+              key={item.year}
+              onClick={() => setActiveIndex(index)}
+              onMouseEnter={() => setActiveIndex(index)}
+              className={`
+                cursor-pointer
+                border-l-4
+                pl-4
+                sm:pl-6
+                py-4
+                sm:py-6
+                transition-all
+                duration-300
 
     ${
       activeIndex === index
@@ -109,39 +109,33 @@ export default function AboutTimeline() {
         </div>
 
         {/* ================= RIGHT SIDE ================= */}
-
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10 backdrop-blur-xl">
 
           {/* Top */}
-
-          <div className="mb-8 flex items-center justify-between">
+          <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 
             <div>
-
-              <p className="text-xs uppercase tracking-[4px] text-blue-400">
+              <p className="text-[10px] sm:text-xs uppercase tracking-[4px] text-blue-400">
                 {currentMilestone.year}
               </p>
 
-              <h2 className="mt-2 text-4xl font-bold text-white">
+              <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
                 {currentMilestone.title}
               </h2>
-         
 
-              <p className="mt-3 text-xl text-blue-300">
+              <p className="mt-2 sm:mt-3 text-base sm:text-lg lg:text-xl text-blue-300">
                 {currentMilestone.subtitle}
               </p>
-
             </div>
 
-            <span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-xs text-blue-300">
+            <span className="self-start sm:self-auto rounded-full border border-blue-500/20 bg-blue-500/10 px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs text-blue-300">
               Phase {activeIndex + 1}
             </span>
 
           </div>
 
           {/* Description */}
-
-          <p className="leading-8 text-gray-400">
+          <p className="text-sm sm:text-base leading-relaxed sm:leading-8 text-gray-400">
             {currentMilestone.description}
           </p>
 

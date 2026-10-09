@@ -6,8 +6,23 @@ import ProjectsHeader from "./ProjectsHeader";
 import ProjectSelector from "./ProjectSelector";
 import ProjectShowcase from "./ProjectShowcase";
 
+import { useAuraContext } from "@/context/AuraContext";
+
 export default function Projects() {
   const [activeProjectId, setActiveProjectId] = useState("meso");
+  const { updateProjectContext } = useAuraContext();
+
+  const handleSelectProject = (id) => {
+    setActiveProjectId(id);
+    const selected = PROJECTS_DATA.find((p) => p.id === id);
+    if (selected && !selected.isPlaceholder) {
+      updateProjectContext({
+        projectId: selected.id,
+        projectName: selected.shortTitle || selected.title,
+        contextMode: "project",
+      });
+    }
+  };
 
   const activeProject =
     PROJECTS_DATA.find((p) => p.id === activeProjectId) || PROJECTS_DATA[0];
@@ -42,7 +57,7 @@ export default function Projects() {
               <ProjectSelector
                 projects={PROJECTS_DATA}
                 activeProjectId={activeProjectId}
-                onSelectProject={setActiveProjectId}
+                onSelectProject={handleSelectProject}
               />
             </div>
 

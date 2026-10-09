@@ -221,11 +221,11 @@ export default function ProjectShowcase({ project }) {
               </h4>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {specs.map((spec) => (
                 <div
                   key={spec.label}
-                  className="rounded-xl border border-white/5 bg-white/[0.015] p-3.5 transition-colors hover:border-blue-400/20"
+                  className="rounded-xl border border-white/5 bg-white/[0.015] p-3.5 transition-colors hover:border-blue-400/20 break-words min-w-0"
                 >
                   <p className="text-[8px] font-mono uppercase tracking-[2px] text-gray-500">
                     {spec.label}
@@ -419,7 +419,7 @@ export default function ProjectShowcase({ project }) {
               </div>
 
               {/* RIGHT: CTA button */}
-              <div className="shrink-0">
+              <div className="shrink-0 w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={() =>
@@ -432,7 +432,10 @@ export default function ProjectShowcase({ project }) {
                   className="
                     group
                     inline-flex
+                    w-full
+                    sm:w-auto
                     items-center
+                    justify-center
                     gap-3
                     rounded-full
                     border

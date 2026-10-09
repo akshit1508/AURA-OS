@@ -35,21 +35,30 @@ export default function AuraScene({
         ${
           open
             ? `
-              right-5
-              top-[92px]
+              inset-x-2
+              sm:inset-x-auto
+              sm:right-5
+              top-[66px]
+              sm:top-[76px]
 
-              h-[220px]
+              h-[140px]
+              sm:h-[220px]
 
-              w-[min(440px,calc(100vw-40px))]
+              w-[calc(100vw-16px)]
+              sm:w-[440px]
 
               pointer-events-none
             `
             : `
-              bottom-6
-              right-6
+              bottom-4
+              right-4
+              sm:bottom-6
+              sm:right-6
 
-              h-[120px]
-              w-[120px]
+              h-[90px]
+              w-[90px]
+              sm:h-[120px]
+              sm:w-[120px]
 
               pointer-events-auto
             `

@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export default function SkillTechnology({ skill }) {
+  const [imgError, setImgError] = useState(false);
   
   return (
     <div
@@ -41,18 +44,25 @@ export default function SkillTechnology({ skill }) {
   group-hover:bg-blue-500/[0.06]
         "
       >
-        <img
-          src={skill.icon}
-          alt={skill.name}
-          className="
-            h-5
-            w-5
-            object-contain
-            transition-transform
-            duration-300
-            group-hover:scale-110
-          "
-        />
+        {!imgError ? (
+          <img
+            src={skill.icon}
+            alt={skill.name}
+            onError={() => setImgError(true)}
+            className="
+              h-5
+              w-5
+              object-contain
+              transition-transform
+              duration-300
+              group-hover:scale-110
+            "
+          />
+        ) : (
+          <span className="text-[10px] font-bold tracking-wider text-cyan-400">
+            {skill.name?.slice(0, 2).toUpperCase()}
+          </span>
+        )}
       </div>
 
 
