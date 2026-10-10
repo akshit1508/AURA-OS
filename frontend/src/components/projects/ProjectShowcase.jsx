@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import ProjectPreviewFrame from "./ProjectPreviewFrame";
 import ProjectPlaceholder from "./ProjectPlaceholder";
 import ArchitecturePanel from "./ArchitecturePanel";
+import MesoShowcase from "./MesoShowcase";
+import MediVaultShowcase from "./MediVaultShowcase";
 import { useAuraContext } from "@/context/AuraContext";
 import PROJECT_KNOWLEDGE from "@/constants/projectKnowledge";
 
@@ -21,6 +23,39 @@ export default function ProjectShowcase({ project }) {
 
   if (project.isPlaceholder) {
     return <ProjectPlaceholder project={project} />;
+  }
+
+  // Specialized Case Study Showcases
+  if (project.id === "meso") {
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={project.id}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
+          <MesoShowcase project={project} />
+        </motion.div>
+      </AnimatePresence>
+    );
+  }
+
+  if (project.id === "medi-vault") {
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={project.id}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
+          <MediVaultShowcase project={project} />
+        </motion.div>
+      </AnimatePresence>
+    );
   }
 
   const isBuilt = project.status === "BUILT";
